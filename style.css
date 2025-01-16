@@ -15,6 +15,7 @@ body,html{
     justify-content: center;
 }
 header{
+  padding: 10px;
     background-color: #ffffff8a;
     background: transparent(20px);
     text-align: center;
