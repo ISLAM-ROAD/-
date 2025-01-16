@@ -40,8 +40,8 @@ header{
     right: -250px;    /* Initially hide the nav links off-screen */
     width: 250px;
     height: 100vh;
-    background-color: #464646;
-    backdrop-filter: blur(50px);
+    background-color: #c5c49c23;
+    backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -166,28 +166,58 @@ color: #000000;
   line-height: 2;
   color: #777;
 }
-.container{
+.container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  padding: 10px;
 }
-.news-item{
-  margin: 50px;
+
+.news-item {
+  margin: 20px;
   background-color: #bfc59b;
   border-radius: 20px;
-width: 20%;
-height: 300px;
-padding: 25px;
+  width: 20%;
+  height: 300px;
+  padding: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
-.news-item a{
-  margin: 60px;
+
+.news-item:hover {
+  transform: scale(1.05);
+}
+
+.news-item a {
+  margin: 20px auto 0;
+  display: inline-block;
   color: white;
   text-decoration: none;
-  padding: 10px;
-  bottom: 30px;
+  padding: 10px 15px;
   border-radius: 20px;
   background-color: #000000;
+  text-align: center;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .news-item {
+      width: 30%;
+  }
+}
+
+@media (max-width: 768px) {
+  .news-item {
+      width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .news-item {
+      width: 90%;
+      margin: 10px 0;
+  }
 }
 .end{
   margin-top: 50px;
@@ -203,4 +233,43 @@ padding: 25px;
 margin-top: 80px;
 font-size: 100px;
 text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+.end {
+  margin-top: 50px;
+  text-align: center;
+  background-image: url('back.png');
+  height: 700px;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.end h1 {
+  color: white;
+  font-size: 100px;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .end h1 {
+      font-size: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .end h1 {
+      font-size: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .end h1 {
+      font-size: 40px;
+  }
 }
