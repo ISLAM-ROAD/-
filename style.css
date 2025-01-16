@@ -1,0 +1,206 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+body,html{
+    font-family: 'Cairo', sans-serif;
+    background-color:#dddac6;
+    color: black;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+header{
+    background-color: #ffffff8a;
+    background: transparent(20px);
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Basic styling for the nav container */
+.nav {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  /* Style for the navigation links */
+  .nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: fixed;  /* Fixed position so the nav links stay in place */
+    top: 0;
+    right: -250px;    /* Initially hide the nav links off-screen */
+    width: 250px;
+    height: 100vh;
+    background-color: #464646;
+    backdrop-filter: blur(50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: right 0.3s ease; /* Smooth sliding transition */
+  }
+  /* Style for the individual nav items */
+  .nav-links li {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .nav-links a {
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 18px;
+  }
+  .nav-links a:hover {
+    color: rgba(255, 255, 255, 0.486); 
+    border: 1px solid green;/* Change the color on hover */
+ border-radius: 30px;
+ transition: 1s;
+  }
+  /* Hamburger icon style */
+/* Hamburger icon style */
+.hamburger {
+    cursor: pointer;
+    display: block;
+    z-index: 10; /* Make sure the hamburger is always on top */
+    width: 40px; /* Adjust the width as needed */
+    height: 40px; /* Adjust the height as needed */
+}
+.hamburger img {
+    width: 100%;
+    height: auto; /* Keeps the aspect ratio of the image */
+}
+
+  /* When the menu is active (hamburger clicked), slide in the nav links */
+  .nav-links.active {
+    right: 0; /* Slide in from the right */
+  }
+  
+  /* Optional: For mobile view */
+  @media (max-width: 768px) {
+    .hamburger{
+      display: block; /* Display hamburger on small screens */
+    }
+  }
+  .logo img{
+    width: 100px;
+  }
+  .social-icons img{
+    margin: 10px;
+    width: 30px;
+    height: auto;
+  }
+  .social-icons .img:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+  }
+  .landing{
+    background-image: url(back.png);
+    height: 700px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+  .hero{
+margin: 100px;
+ align-items: center;
+}
+  .hero a{
+text-decoration: none;
+border: solid green 2px ;
+padding: 5px;
+color: #000000;
+}
+.hero a:hover{
+  background-color: green;
+  color: white;
+  transition: 1s;
+}
+  .text h1,p{
+    margin: 10px;
+  }
+  .main-heading {
+  text-align: center;
+}
+.main-heading h2 {
+  font-weight: normal;
+  font-size: 40px;
+  position: relative;
+  margin-bottom: 70px;
+  text-transform: uppercase;
+}
+.main-heading h2::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2px;
+  background-color: #bfc59b;
+  bottom: -10px;
+  width: 120px;
+}
+.main-heading h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #bfc59b;
+  bottom: -18px;
+  background-color: white;
+}
+.main-heading p {
+  width: 550px;
+  margin: 0 auto 100px;
+  max-width: 100%;
+  line-height: 2;
+  color: #777;
+}
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.news-item{
+  margin: 50px;
+  background-color: #bfc59b;
+  border-radius: 20px;
+width: 20%;
+height: 300px;
+padding: 25px;
+}
+.news-item a{
+  margin: 60px;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  bottom: 30px;
+  border-radius: 20px;
+  background-color: #000000;
+}
+.end{
+  margin-top: 50px;
+  text-align: center;
+  background-image: url(back.png) ;
+  height: 700px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+.end h1{
+  color: white;
+margin-top: 80px;
+font-size: 100px;
+text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
