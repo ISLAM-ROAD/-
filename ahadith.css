@@ -1,0 +1,146 @@
+*{
+    margin: 0px;
+
+}
+body,html{
+    font-family: 'Cairo', sans-serif;
+    background-color:#dddac6;
+    color: black;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+header{
+  padding: 10px;
+    background-color: #ffffff8a;
+    background: transparent(20px);
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* Basic styling for the nav container */
+.nav {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  /* Style for the navigation links */
+  .nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: fixed;  /* Fixed position so the nav links stay in place */
+    top: 0;
+    right: -250px;    /* Initially hide the nav links off-screen */
+    width: 250px;
+    height: 100vh;
+    background-color: #c5c49c23;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: right 0.3s ease; /* Smooth sliding transition */
+  }
+  /* Style for the individual nav items */
+  .nav-links li {
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .nav-links a {
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 18px;
+  }
+  .nav-links a:hover {
+    color: rgba(255, 255, 255, 0.486); 
+    border: 1px solid green;/* Change the color on hover */
+ border-radius: 30px;
+ transition: 1s;
+  }
+  /* Hamburger icon style */
+/* Hamburger icon style */
+.hamburger {
+    cursor: pointer;
+    display: block;
+    z-index: 10; /* Make sure the hamburger is always on top */
+    width: 40px; /* Adjust the width as needed */
+    height: 40px; /* Adjust the height as needed */
+}
+.hamburger img {
+    width: 100%;
+    height: auto; /* Keeps the aspect ratio of the image */
+}
+
+  /* When the menu is active (hamburger clicked), slide in the nav links */
+  .nav-links.active {
+    right: 0; /* Slide in from the right */
+  }
+  
+  /* Optional: For mobile view */
+  @media (max-width: 768px) {
+    .hamburger{
+      display: block; /* Display hamburger on small screens */
+    }
+  }
+  .logo img{
+    width: 100px;
+  }
+  .social-icons img{
+    margin: 10px;
+    width: 30px;
+    height: auto;
+  }
+  .social-icons .img:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+  }
+  .links{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  .card{
+   
+    padding: 10px;
+    width: 300px;
+    height: 200px;
+    margin: 15px;
+    font-size: 18px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+    box-shadow: 50px 10px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border:  green solid ;
+  }
+  .card h1{
+    text-align: center;
+    font-size: 24px;
+    margin: 10px;
+    padding: 10px;
+  }
+  .card a{
+    padding: 5px;
+    margin: 20px;
+    color: white;
+text-decoration: none;
+border: 1px dotted green;
+  }
+.card:hover{
+  transform: scale(1.1);
+}
+.card a:hover{
+  transition: 1ms;
+  border: solid 1px green ;
+  
+}
+.card link a{
+  margin: 10px;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار ديني</title>
+    <link rel="stylesheet" href="asala.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h2 id="question">السؤال الأول: ما هو أول مسجد بني في الإسلام؟</h2>
+        <ul class="choices">
+            <li><button class="choice-btn" onclick="checkAnswer(0)">المسجد النبوي</button></li>
+            <li><button class="choice-btn" onclick="checkAnswer(1)">مسجد قباء</button></li>
+            <li><button class="choice-btn" onclick="checkAnswer(2)">المسجد الحرام</button></li>
+            <li><button class="choice-btn" onclick="checkAnswer(3)">المسجد الأقصى</button></li>
+        </ul>
+        <p id="score"></p>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "ما هو أول مسجد بني في الإسلام؟",
+                choices: ["المسجد النبوي", "مسجد قباء", "المسجد الحرام", "المسجد الأقصى"],
+                correct: 1
+            },
+            {
+                question: "ما هي أول آية نزلت من القرآن؟",
+                choices: ["اقرأ باسم ربك الذي خلق", "الحمد لله رب العالمين", "قل هو الله أحد", "إنا أعطيناك الكوثر"],
+                correct: 0
+            },
+            {
+                question: "كم عدد سور القرآن الكريم؟",
+                choices: ["114", "112", "116", "110"],
+                correct: 0
+            },
+            {
+                question: "ما هي السورة التي تُسمى قلب القرآن؟",
+                choices: ["سورة البقرة", "سورة الإخلاص", "سورة يس", "سورة الفاتحة"],
+                correct: 2
+            },
+            {
+                question: "من هو النبي الذي لقب بخليل الله؟",
+                choices: ["النبي محمد", "النبي إبراهيم", "النبي موسى", "النبي عيسى"],
+                correct: 1
+            }
+           
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            if (currentQuestion < questions.length) {
+                const questionObj = questions[currentQuestion];
+                document.getElementById("question").textContent = `السؤال ${currentQuestion + 1}: ${questionObj.question}`;
+                const choicesList = document.querySelector(".choices");
+                choicesList.innerHTML = "";
+                questionObj.choices.forEach((choice, index) => {
+                    choicesList.innerHTML += `<li><button class='choice-btn' onclick='checkAnswer(${index})'>${choice}</button></li>`;
+                });
+            } else {
+                showResults();
+            }
+        }
+
+        function checkAnswer(selected) {
+            if (selected === questions[currentQuestion].correct) {
+                score++;
+            }
+            currentQuestion++;
+            loadQuestion();
+        }
+
+        function showResults() {
+            const quizContainer = document.querySelector(".quiz-container");
+            quizContainer.innerHTML = `<h2>مبروك! حصلت على ${score} من ${questions.length}</h2>`;
+
+            questions.forEach((q, index) => {
+                let choicesHTML = q.choices.map((choice, i) => {
+                    const correctClass = i === q.correct ? 'correct-answer' : '';
+                    return `<li><button class='choice-btn ${correctClass}' disabled>${choice}</button></li>`;
+                }).join('');
+
+                quizContainer.innerHTML += `
+                    <div class="question-result">
+                        <h3>السؤال ${index + 1}: ${q.question}</h3>
+                        <ul class="choices">${choicesHTML}</ul>
+                    </div>
+                `;
+            });
+        }
+
+        loadQuestion();
+    </script>
+</body>
+</html>
